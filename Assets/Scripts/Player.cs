@@ -8,6 +8,7 @@ namespace LabirintSpace
         {
         public float Speed = 3.0f;
         private Rigidbody m_rigidbody;
+        public bool immortal;
 
         private void Start()
             {
