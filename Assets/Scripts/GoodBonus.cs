@@ -5,6 +5,7 @@ namespace LabirintSpace
     {
     public sealed class GoodBonus : InteractiveObject, IFly, IFlicker, ICloneable
         {
+        public int Point;
         private Material _material;
         private float _lengthFly;
         private DisplayBonuses _displayBonuses;

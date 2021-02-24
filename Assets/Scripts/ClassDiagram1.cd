@@ -61,7 +61,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAGCAACAAAAAAAAAAACAARAEAAAFA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAGCAACAAAAAAAAAAACAARAEAAAFA=</HashCode>
       <FileName>Assets\Scripts\GoodBonus.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -69,7 +69,7 @@
   <Class Name="LabirintSpace.InteractiveObject" Collapsed="true">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAACAAQAAQAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAACAAAAQAAAAAAAAAAAAAACAAQAAQAAAAAAQ=</HashCode>
       <FileName>Assets\Scripts\InteractiveObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

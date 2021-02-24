@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace LabirintSpace
     {
-    public abstract class InteractiveObject : MonoBehaviour, IInteractable
+    public abstract class InteractiveObject : MonoBehaviour, IInteractable, IComparable<InteractiveObject>
         {
         public bool IsInteractable { get; } = true;
         protected abstract void Interaction();
@@ -31,5 +32,11 @@ namespace LabirintSpace
                 renderer.material.color = Random.ColorHSV();
                 }
             }
+
+        public int CompareTo(InteractiveObject other)
+            {
+            return name.CompareTo(other.name);
+            }
+
         }
     }
