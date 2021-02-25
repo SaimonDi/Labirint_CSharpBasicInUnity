@@ -7,8 +7,8 @@ namespace LabirintSpace
     {
     public abstract class InteractiveObject : MonoBehaviour, IInteractable, IComparable<InteractiveObject>
         {
+        protected Color _color;
         public bool IsInteractable { get; } = true;
-        protected abstract void Interaction();
 
         private void OnTriggerEnter(Collider other)
             {
@@ -19,6 +19,7 @@ namespace LabirintSpace
             Interaction();
             Destroy(gameObject);
             }
+        protected abstract void Interaction();
 
         private void Start()
             {
@@ -27,9 +28,10 @@ namespace LabirintSpace
 
         public void Action()
             {
+            _color = Random.ColorHSV();
             if(TryGetComponent(out Renderer renderer))
                 {
-                renderer.material.color = Random.ColorHSV();
+                renderer.material.color = _color;
                 }
             }
 

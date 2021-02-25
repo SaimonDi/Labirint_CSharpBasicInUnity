@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 namespace LabirintSpace
     {
@@ -9,35 +11,25 @@ namespace LabirintSpace
         private Material _material;
         private float _lengthFly;
         private DisplayBonuses _displayBonuses;
-        private Player _player;
+
+        private event EventHandler<CaughtPlayerEventArgs> _caughtPlayerBonus;
+        public event EventHandler<CaughtPlayerEventArgs> CaughtPlayerBonus
+            {
+            add { _caughtPlayerBonus += value; }
+            remove { _caughtPlayerBonus -= value; }
+            }
 
         private void Awake()
             {
             _displayBonuses = new DisplayBonuses();
             _material = GetComponent<Renderer>().material;
             _lengthFly = Random.Range(1.0f, 5.0f);
-            _player = FindObjectOfType<Player>();
             }
         protected override void Interaction()
             {
-            _displayBonuses.Display(5);
+            //_displayBonuses.Display(5);
             //add bonus
-            AddGoodBonus();
-            }
-
-        private void AddGoodBonus()
-            {
-            var rnd = Random.Range(1, 2);
-            if(rnd == 1)
-                {
-                _player.Speed = 10;
-                Debug.Log("Player SpeedUp");
-                }
-            else if(rnd == 2)
-                {
-                _player.immortal = true;
-                Debug.Log("Player Immortal");
-                }
+            _caughtPlayerBonus?.Invoke(this, new CaughtPlayerEventArgs(_color));
             }
 
         public void Fly()
