@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LabirintSpace
     {
@@ -7,34 +9,22 @@ namespace LabirintSpace
         {
         private float _lengthFly;
         private float _speedRotation;
-        private Player _player;
-
+        
+        private event EventHandler<CaughtPlayerEventArgs> _caughtPlayer;
+        public event EventHandler<CaughtPlayerEventArgs> CaughtPlayer
+            { 
+            add { _caughtPlayer += value; } 
+            remove { _caughtPlayer -= value; }
+            }
 
         private void Awake()
             {
             _lengthFly = Random.Range(1.0f, 5.0f);
             _speedRotation = Random.Range(10.0f, 50.0f);
-            _player = FindObjectOfType<Player>();
             }
         protected override void Interaction()
             {
-            //bad bonus
-            AddBadBonus();
-            }
-
-        private void AddBadBonus()
-            {
-            var rnd = Random.Range(1, 2);
-            if(rnd == 1)
-                {
-                _player.Speed = 1;
-                Debug.Log("Player SlowDown");
-                }
-            else if(rnd == 2)
-                {
-                Destroy(_player.gameObject);
-                Debug.Log("Player Destroed");
-                }
+            _caughtPlayer?.Invoke( this, new CaughtPlayerEventArgs(_color));
             }
 
         public void Fly()

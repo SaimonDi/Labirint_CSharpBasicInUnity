@@ -9,11 +9,18 @@ namespace LabirintSpace
         {
         public InteractiveObject[] _interactiveObjects;
         private int _index = -1;
+        private InteractiveObject _current;
 
         public ListInteractableObject()
             {
             _interactiveObjects = Object.FindObjectsOfType<InteractiveObject>();
             Array.Sort(_interactiveObjects);
+            }
+
+        public InteractiveObject this [int index]
+            {
+            get => _interactiveObjects[index];
+            set => _interactiveObjects[index] = value;
             }
 
         public bool MoveNext()
@@ -29,6 +36,7 @@ namespace LabirintSpace
 
         public void Reset() => _index = -1;
         public object Current => _interactiveObjects[_index];
+        public int Count => _interactiveObjects.Length;
 
         public IEnumerator GetEnumerator()
             {
