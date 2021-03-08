@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LabirintSpace
     {
-    public interface IInitialization
+    public interface IAction
         {
         void Action();
         }
