@@ -3154,8 +3154,11 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_Layer: 0
@@ -3231,6 +3234,7 @@ Transform:
   m_RootOrder: 0
 <<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,6 +3262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 =======
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &968746595
 GameObject:
@@ -4990,6 +4996,7 @@ MeshFilter:
   m_GameObject: {fileID: 1431780704}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &1459864805
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5126,8 @@ Rigidbody:
   m_CollisionDetection: 0
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1469860894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,6 +5254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e0be258db9fcd449de28bde9ae0b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  PlayerType: 1
+>>>>>>> Stashed changes
 --- !u!4 &1484843448
 Transform:
   m_ObjectHideFlags: 0
@@ -5820,6 +5833,7 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &1767625507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,6 +5913,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767625507}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1 &1789984713
@@ -6493,8 +6509,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Children:
   - {fileID: 1767625508}
+=======
+  m_Children: []
+>>>>>>> Stashed changes
 =======
   m_Children: []
 >>>>>>> Stashed changes

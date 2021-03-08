@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace LabirintSpace
     {
-    public interface IExecute
+    public enum PlayerType
         {
-        void Execute();
+        None = 0,
+        Ball = 1,
+        Cube = 2
         }
 
     }

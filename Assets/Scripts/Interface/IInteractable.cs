@@ -3,9 +3,8 @@ using UnityEngine;
 
 namespace LabirintSpace
     {
-    public interface IExecute
+    public interface IInteractable : IAction
         {
-        void Execute();
+        bool IsInteractable { get; }
         }
-
     }

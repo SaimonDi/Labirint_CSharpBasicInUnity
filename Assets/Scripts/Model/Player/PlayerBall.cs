@@ -7,6 +7,10 @@ namespace LabirintSpace
     public sealed class PlayerBall : PlayerBase
         {
         private Rigidbody _rigidbody;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         private void Start()
             {
             _rigidbody = GetComponent<Rigidbody>();
