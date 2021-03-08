@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scripts/IAction.cs.meta
 guid: 98db7c83c145a984abd638a735dda4b6
+=======
+guid: 97f972b713741f34f9b4fffe2e1cb4fc
+>>>>>>> parent of 37176e8 (Forth):Assets/Scripts/GoodBonusComparer.cs.meta
+=======
+guid: 98db7c83c145a984abd638a735dda4b6
+>>>>>>> parent of 37176e8 (Forth)
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
