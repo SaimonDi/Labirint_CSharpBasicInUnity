@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace LabirintSpace
     {
-    public interface ICloneable 
+    public enum PlayerType
         {
-        void Clone();
+        None = 0,
+        Ball = 1,
+        Cube = 2
         }
+
     }

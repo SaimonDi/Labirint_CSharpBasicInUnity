@@ -8,15 +8,16 @@ namespace LabirintSpace
     public sealed class DisplayEndGame
         {
         private Text _finishGameLabel;
-        public DisplayEndGame(Text finishGameLabel)
+
+        public DisplayEndGame(GameObject endGame)
             {
-            _finishGameLabel = finishGameLabel;
+            _finishGameLabel = endGame.GetComponentInChildren<Text>();
             _finishGameLabel.text = String.Empty;
             }
 
-        public void GameOver(object o, CaughtPlayerEventArgs args)
+        public void GameOver(string name, Color color)
             {
-            _finishGameLabel.text = $"Вы проиграли. Вас убил {o} {args.Color} цвета";
+            _finishGameLabel.text = $"Вы проиграли. Вас убил {name} {color} цвета";
             }
         }
     }

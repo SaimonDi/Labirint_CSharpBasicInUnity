@@ -5,40 +5,45 @@ using Random = UnityEngine.Random;
 
 namespace LabirintSpace
     {
-    public abstract class InteractiveObject : MonoBehaviour, IInteractable, IComparable<InteractiveObject>
+    public abstract class InteractiveObject : MonoBehaviour, IExecute
         {
         protected Color _color;
-        public bool IsInteractable { get; } = true;
+
+        private bool _isInteractable;
+
+        protected bool IsInteractable
+            {
+            get { return _isInteractable; }
+            private set
+                {
+                _isInteractable = value;
+                GetComponent<Renderer>().enabled = _isInteractable;
+                GetComponent<Collider>().enabled = _isInteractable;
+                }
+            }
 
         private void OnTriggerEnter(Collider other)
             {
-            if(!IsInteractable||!other.CompareTag("Player"))
+            if(!IsInteractable || !other.CompareTag("Player"))
                 {
                 return;
                 }
             Interaction();
-            Destroy(gameObject);
+            IsInteractable = false;
             }
+
         protected abstract void Interaction();
+        public abstract void Execute();
 
         private void Start()
             {
-                Action();
-            }
-
-        public void Action()
-            {
+            IsInteractable = true;
             _color = Random.ColorHSV();
             if(TryGetComponent(out Renderer renderer))
                 {
                 renderer.material.color = _color;
                 }
             }
-
-        public int CompareTo(InteractiveObject other)
-            {
-            return name.CompareTo(other.name);
-            }
-
         }
+
     }
