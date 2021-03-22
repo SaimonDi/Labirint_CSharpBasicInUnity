@@ -25,7 +25,7 @@ namespace LabirintSpace
 
         public override void Execute()
             {
-            if(!IsInteractable) { return; }
+            if(!IsInteractable) { gameObject.SetActive(false); return; }
             Fly();
             Flicker();
             }
