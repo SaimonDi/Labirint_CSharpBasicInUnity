@@ -12,11 +12,11 @@ namespace LabirintSpace
             }
         private void OnDisable()
             {
-            Radar.RemoveRadarObject(gameObject);
+            DisplayRadar.RemoveRadarObject(gameObject);
             }
         private void OnEnable()
             {
-            Radar.RegisterRadarObject(gameObject, _ico);
+            DisplayRadar.RegisterRadarObject(gameObject, _ico);
             }
         }
     }

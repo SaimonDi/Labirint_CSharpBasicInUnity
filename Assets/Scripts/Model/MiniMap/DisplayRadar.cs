@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 namespace LabirintSpace
     {
-    public sealed class Radar : MonoBehaviour 
+    public sealed class DisplayRadar : MonoBehaviour
         {
         private Transform _playerPos;
         private readonly float _mapScale = 2;
-        private readonly PlayerBase _playerBase;
         public static List<RadarObject> RadObjects = new List<RadarObject>();
 
         private void Start()
@@ -38,7 +37,7 @@ namespace LabirintSpace
             RadObjects.AddRange(newList);
             }
 
-        private void DrawRadarDots()
+        public void DrawRadarDots()
             {
             foreach(RadarObject radObject in RadObjects)
                 {
@@ -60,11 +59,5 @@ namespace LabirintSpace
                 DrawRadarDots();
                 }
             }
-        }
-
-    public sealed class RadarObject
-        {
-        public Image Icon;
-        public GameObject Owner;
         }
     }

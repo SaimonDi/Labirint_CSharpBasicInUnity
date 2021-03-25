@@ -33,6 +33,7 @@ namespace LabirintSpace
                 player = _reference.PlayerBall;
                 }
 
+
             _cameraController = new CameraController(player.transform, _reference.MainCamera.transform);
             _interactiveObject.AddExecuteObject(_cameraController);
 
