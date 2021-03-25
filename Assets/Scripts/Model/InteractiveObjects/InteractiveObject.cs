@@ -11,14 +11,15 @@ namespace LabirintSpace
 
         private bool _isInteractable;
 
-        protected bool IsInteractable
+        public bool IsInteractable
             {
             get { return _isInteractable; }
-            private set
+            set
                 {
                 _isInteractable = value;
-                GetComponent<Renderer>().enabled = _isInteractable;
-                GetComponent<Collider>().enabled = _isInteractable;
+                //GetComponent<Renderer>().enabled = _isInteractable;
+                //GetComponent<Collider>().enabled = _isInteractable;
+                gameObject.SetActive(_isInteractable);
                 }
             }
 

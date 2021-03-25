@@ -16,6 +16,7 @@ namespace LabirintSpace
         private DisplayWinGame _displayWinGame;
         private CameraController _cameraController;
         private InputController _inputController;
+        private SaveAndLoadController _saveAndLoadController;
         private int _remainingBonuses;
         private int _countBonuses;
         private Reference _reference;
@@ -32,6 +33,7 @@ namespace LabirintSpace
                 player = _reference.PlayerBall;
                 }
 
+
             _cameraController = new CameraController(player.transform, _reference.MainCamera.transform);
             _interactiveObject.AddExecuteObject(_cameraController);
 
@@ -40,6 +42,7 @@ namespace LabirintSpace
                 _inputController = new InputController(player);
                 _interactiveObject.AddExecuteObject(_inputController);
                 }
+
 
             _displayEndGame = new DisplayEndGame(_reference.EndGame);
             _displayBonuses = new DisplayBonuses(_reference.Bonuse);
@@ -62,6 +65,9 @@ namespace LabirintSpace
 
             _reference.RestartButton.onClick.AddListener(RestartGame);
             _reference.RestartButton.gameObject.SetActive(false);
+
+            _saveAndLoadController = new SaveAndLoadController(_interactiveObject, player);
+            _interactiveObject.AddExecuteObject(_saveAndLoadController);
             }
 
         private void RestartGame()
@@ -93,7 +99,6 @@ namespace LabirintSpace
                 }
             else { return; }
             }
-
 
         private void Update()
             {
